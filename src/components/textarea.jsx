@@ -9,7 +9,7 @@ export default function Textarea({ title, ...props }) {
         </label>
       </div>
       <textarea
-        className="text-sm border border-gray-300 rounded-md py-2 px-2 min-h-10 focus:ring-1px-solid focus:ring-blue-500"
+        className="text-sm border border-gray-300 rounded-md py-2 px-2 min-h-10 outline-none focus:ring-1 focus:ring-blue-500"
         {...props}
       />
     </>

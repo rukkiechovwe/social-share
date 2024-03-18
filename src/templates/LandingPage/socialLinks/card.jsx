@@ -1,9 +1,20 @@
 import React from 'react';
 import Icons from '../../../assets/icons';
 
-export default function SocialLinkCard({ icon, title, link, bgColor, color, buttonColor }) {
+export default function SocialLinkCard({
+  icon,
+  title,
+  link,
+  bgColor,
+  color,
+  buttonColor,
+  targetColor,
+}) {
   return (
-    <div className={`rounded-2xl px-5 py-4 w-full ${bgColor} ${color}`}>
+    <div
+      id={title}
+      className={`rounded-2xl px-5 py-4 w-full ${bgColor} ${color} ${targetColor} target:ring-1 target:ring-offset-4`}
+    >
       <p className="flex items-center font-bold gap-2 capitalize">
         {icon}
         {title}

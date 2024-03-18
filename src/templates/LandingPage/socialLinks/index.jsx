@@ -10,6 +10,7 @@ const links = [
     bgColor: 'bg-secondary-1',
     color: 'text-primary-1',
     buttonColor: 'bg-primary-1',
+    targetColor: 'target:ring-primary-1',
   },
   {
     title: 'linkedin',
@@ -18,6 +19,7 @@ const links = [
     bgColor: 'bg-secondary-2',
     color: 'text-primary-2',
     buttonColor: 'bg-primary-2',
+    targetColor: 'target:ring-primary-2',
   },
   {
     title: 'whatsapp',
@@ -26,6 +28,7 @@ const links = [
     bgColor: 'bg-secondary-3',
     color: 'text-primary-3',
     buttonColor: 'bg-primary-3',
+    targetColor: 'target:ring-primary-3',
   },
   {
     title: 'pinterest',
@@ -34,6 +37,7 @@ const links = [
     bgColor: 'bg-secondary-4',
     color: 'text-primary-4',
     buttonColor: 'bg-primary-4',
+    targetColor: 'target:ring-primary-4',
   },
 ];
 
@@ -51,6 +55,7 @@ export default function SocialLinks() {
             bgColor={link.bgColor}
             color={link.color}
             buttonColor={link.buttonColor}
+            targetColor={link.targetColor}
           />
         ))}
       </div>

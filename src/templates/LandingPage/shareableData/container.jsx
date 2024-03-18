@@ -1,4 +1,5 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
 import Input from '../../../components/input';
 import Textarea from '../../../components/textarea';
 import Icons from '../../../assets/icons';
@@ -21,12 +22,13 @@ const availableLinks = {
 };
 
 const Available = ({ id, icon, color }) => (
-  <a href={id} className={color}>
+  <a href={`#${id}`} className={color}>
     {icon}
   </a>
 );
 
 export function LinkContainer() {
+  const [input, setInput] = useState('');
   return (
     <div id="link-container" className="flex flex-col w-full gap-1">
       <Input
@@ -34,8 +36,9 @@ export function LinkContainer() {
         id="link"
         placeholder="https://example.com"
         type="link"
-        value=""
         name="link"
+        value={input}
+        onChange={e => setInput(e.target.value)}
       />
       <div className="flex items-center gap-[10px] flex-row mt-0.5 text-gray-600 text-xs">
         <span className="font-medium">Available for:</span>
@@ -53,9 +56,18 @@ export function LinkContainer() {
 }
 
 export function TextContainer() {
+  const [input, setInput] = useState('');
+
   return (
     <div id="text-container" className="flex flex-col w-full gap-1">
-      <Textarea title="Text to share" />
+      <Textarea
+        title="Text to share"
+        id="text"
+        name="text"
+        placeholder="Checkout this resource at example"
+        value={input}
+        onChange={e => setInput(e.target.value)}
+      />
       <div className="flex items-center gap-[10px] flex-row mt-0.5 text-gray-600 text-xs">
         <span className="font-medium">Available for:</span>
         {availableLinks.text.map(item => (
@@ -72,6 +84,8 @@ export function TextContainer() {
 }
 
 export function UrlContainer() {
+  const [input, setInput] = useState('');
+
   return (
     <div id="url-container" className="flex flex-col w-full gap-1">
       <Input
@@ -79,8 +93,9 @@ export function UrlContainer() {
         id="url"
         placeholder="https://example.com/image.png"
         type="url"
-        value=""
         name="url"
+        value={input}
+        onChange={e => setInput(e.target.value)}
       />
       <div className="flex items-center gap-10px flex-row mt-0.5 text-gray-600 text-xs">
         <span className="font-medium">Available for:</span>
