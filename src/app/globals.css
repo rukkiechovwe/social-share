@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+}
+
+.gradient {
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  --gradient-to: rgb(59 130 246);
+  --gradient-from: rgb(239 68 68);
+  --gradient-stops: var(--gradient-from), var(--gradient-to);
+  --gradient: var(--gradient-via-stops, var(--gradient-stops));
+  background-image: linear-gradient(to right, var(--gradient));
+}
